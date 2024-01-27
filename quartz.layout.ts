@@ -29,7 +29,25 @@ export const defaultContentPageLayout: PageLayout = {
     Component.DesktopOnly(Component.Explorer()),
   ],
   right: [
-    Component.Graph(),
+    Component.Graph({
+      localGraph:{
+        repelForce: 0.4,
+        linkDistance: 25,
+        removeTags: ["ignore-graph"],
+        fontSize: 0.33,
+        opacityScale: 1.35,
+        // showTags: false
+      },
+      globalGraph:{
+        repelForce: 0.2,
+        // centerForce: 0.8,
+        linkDistance: 35,
+        removeTags: ["ignore-graph"],
+        fontSize: 0.37,
+        opacityScale: 1.25,
+        showTags: false
+      },
+    }),
     Component.DesktopOnly(Component.TableOfContents()),
     Component.Backlinks(),
   ],
